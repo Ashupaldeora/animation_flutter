@@ -1,3 +1,5 @@
+import 'package:animator/hero_widget/view/detail_page.dart';
+import 'package:animator/hero_widget/view/screen.dart';
 import 'package:animator/pages/home/homepage.dart';
 import 'package:animator/pages/home/provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +19,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      initialRoute: '/hero',
+      routes: {
+        '/': (context) => HomePage(),
+        '/hero': (context) => HeroWidgetScreen(),
+        '/detail': (context) => DetailPage(),
+      },
     );
   }
 }
